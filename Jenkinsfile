@@ -39,6 +39,12 @@ pipeline {
 
             }
         }
-    
+    post {
+        always {
+            junit 'test-results/junit.xml'
+            //archiveArtifacts artifacts: 'test-results/junit.xml', fingerprint: true
+        }
+    }   
+
     }
 }
